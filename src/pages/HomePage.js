@@ -95,7 +95,7 @@ const HomePage = () => {
       setLoading(true);
       if (editable) {
         const response = await axios.post(
-          "/transactions/editTransaction",
+          "https://walletwizard-be.onrender.com/api/v1/transactions/editTransaction",
           editTransactionData // corrected here
         );
         console.log("Response", response);
@@ -105,7 +105,7 @@ const HomePage = () => {
         setLoading(false);
       } else {
         const response = await axios.post(
-          "/transactions/addTransaction",
+          "https://walletwizard-be.onrender.com/api/v1/transactions/addTransaction",
           newTransactionData
         );
         console.log(response);
@@ -121,7 +121,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       await axios.post(
-        "/transactions/deleteTransaction",
+        "https://walletwizard-be.onrender.com/api/v1/transactions/deleteTransaction",
         record // corrected here
       );
       setLoading(false);
@@ -147,7 +147,7 @@ const HomePage = () => {
       }
 
       const response = await axios.post(
-        "/transactions/getAllTransaction",
+        "https://walletwizard-be.onrender.com/api/v1/transactions/getAllTransaction",
         postData
       );
       setAllTransactions(response.data);

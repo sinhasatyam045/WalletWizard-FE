@@ -23,7 +23,7 @@ const Login = () => {
       setLoading(true);
       console.log("Entered");
 
-      const { data } = await axios.post("/users/login", values);
+      const { data } = await axios.post("https://walletwizard-be.onrender.com/api/v1/users/login", values);
       console.log("Entered");
 
       console.log(data);

@@ -19,7 +19,7 @@ const Register = () => {
     try {
       setLoading(true);
       console.log("Loaded");
-      const response = await axios.post("/users/register", values);
+      const response = await axios.post("https://walletwizard-be.onrender.com/api/v1/users/register", values);
       console.log("Response", response);
       toast.success("Registration successful");
       console.log("Done");
