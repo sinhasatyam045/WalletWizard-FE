@@ -117,6 +117,8 @@ const HomePage = () => {
     } catch (error) {
       console.log(error);
     }
+
+    getTransactions();
   };
 
   const handleDelete = async (record) => {
