@@ -35,6 +35,8 @@ const HomePage = () => {
 
   const [allTransactions, setAllTransactions] = useState([]);
 
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
   const columns = [
     {
       title: "Date",
@@ -95,7 +97,7 @@ const HomePage = () => {
       setLoading(true);
       if (editable) {
         const response = await axios.post(
-          "https://walletwizard-be.onrender.com/api/v1/transactions/editTransaction",
+          `https://walletwizard-be.onrender.com/api/v1/transactions/editTransaction`,
           editTransactionData // corrected here
         );
         console.log("Response", response);
@@ -134,11 +136,11 @@ const HomePage = () => {
   const getTransactions = async () => {
     try {
       setLoading(true);
-      const user = JSON.parse(sessionStorage.getItem("user")) || {}
+      const user = JSON.parse(sessionStorage.getItem("user")) || {};
+      console.log(user._id);
       let postData = {
         userid: user._id,
         frequency,
-        selectedDate,
         type,
       };
 

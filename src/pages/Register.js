@@ -16,7 +16,7 @@ const Register = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    try {
+    try { 
       setLoading(true);
       console.log("Loaded");
       const response = await axios.post("https://walletwizard-be.onrender.com/api/v1/users/register", values);
